@@ -9,5 +9,6 @@ app.post('/artists', ArtistController.post);
 app.get('/artists', ArtistController.list);
 app.get('/artists/:artistId', ArtistController.get);
 app.patch('/artists/:artistId', ArtistController.patch);
+app.delete('/artists/:artistId', ArtistController.delete);
 
 module.exports = app;
