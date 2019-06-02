@@ -9,3 +9,18 @@ exports.post = (req, res) => {
     res.status(201).json(artistCreated);
   });
 };
+
+exports.list = (req, res) => {
+  Artist.find({}, (err, artists) => {
+    res.json(artists);
+  });
+};
+
+exports.get = (req, res) => {
+  Artist.findById(req.params.artistId, (err, artist) => {
+    if (err) {
+      res.status(404).json({ error: 'The artist could not be found.' });
+    }
+    res.json(artist);
+  });
+};

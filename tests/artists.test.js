@@ -44,7 +44,7 @@ describe('/artists', () => {
     });
 
     describe('GET /artists', () => {
-      xit('gets all artist records', (done) => {
+      it('gets all artist records', (done) => {
         chai.request(server)
           .get('/artists')
           .end((err, res) => {
@@ -63,7 +63,7 @@ describe('/artists', () => {
     });
 
     describe('GET /artist/:artistId', () => {
-      xit('gets artist record by id', (done) => {
+      it('gets artist record by id', (done) => {
         const artist = artists[0];
         chai.request(server)
           .get(`/artists/${artist._id}`)
@@ -76,7 +76,7 @@ describe('/artists', () => {
           });
       });
 
-      xit('returns a 404 if the artist does not exist', (done) => {
+      it('returns a 404 if the artist does not exist', (done) => {
         chai.request(server)
           .get('/artists/12345')
           .end((err, res) => {
